@@ -1,0 +1,117 @@
+@use '@angular/material' as mat;
+
+.widget-panel {
+  align-items: center;
+  background-color: var(--mat-sys-surface-bright);
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  gap: 25px;
+  justify-content: space-evenly;
+  padding: 30px 0;
+
+  div {
+    margin: 10px 0;
+    max-height: 75px;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+canvas {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.day-picker {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  font-weight: 400;
+  gap: 8px;
+  justify-content: center;
+  letter-spacing: 1.46px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.meal-list-widget {
+  align-items: center;
+  background-color: var(--mat-sys-surface-bright);
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  margin-bottom: 75px;
+  padding: 20px 0;
+
+  mat-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    padding: 0;
+    width: 100%;
+
+    mat-list-item {
+      border-bottom: 1px solid var(--mat-sys-on-primary-container);
+      padding: 0 2px;
+
+      p {
+        font-weight: 300;
+        line-height: 26px;
+        letter-spacing: 1.46px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.right-corner-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.fab-button {
+  @include mat.fab-overrides(
+    (
+      container-shape: 50px,
+      container-color: var(--mat-sys-primary-container),
+      foreground-color: var(--mat-sys-on-primary-container),
+    )
+  );
+}
+
+.diary-list-container {
+  position: relative;
+}
+
+.diary-list-button-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  padding: 0 10px;
+  width: 25%;
+  height: 100%;
+  background-color: var(--mat-sys-error);
+  right: 2px;
+
+  p {
+    color: var(--mat-sys-on-error);
+  }
+
+  button {
+    @include mat.icon-button-overrides(
+      (
+        state-layer-size: 30px,
+        icon-color: var(--mat-sys-on-error),
+      )
+    );
+  }
+}

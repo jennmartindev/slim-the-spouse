@@ -1,0 +1,20 @@
+@use 'partials/_flex';
+@use 'partials/_font';
+@use 'partials/height';
+@use 'partials/_margin';
+@use 'partials/_material';
+@use 'partials/_padding';
+@use 'partials/_width';
+@use 'partials/_app-specific';
+
+.inline {
+  display: inline !important;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.disable {
+  pointer-events: none;
+}

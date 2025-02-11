@@ -1,0 +1,31 @@
+<mat-toolbar class="flex justify-between">
+  <p style="font-size: 20px; font-family: 'Montserrat'; font-weight: 400;" (click)="goHome()">Slim the Spouse</p>
+  <button
+        mat-icon-button
+        type="button"
+        [matMenuTriggerFor]="headerMenu" #menuTrigger="matMenuTrigger" >
+        <mat-icon fontIcon="menu" class="material-symbols-outlined"></mat-icon>
+      </button>
+      <mat-menu #headerMenu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item (click)="manageMeals()" class="btn-border">
+          <mat-icon fontIcon="edit" class="material-symbols-outlined"></mat-icon>
+          <span class="fs-16 fw-400">Manage Meals</span>
+        </button>
+        <button mat-menu-item (click)="calorieLookup()" class="btn-border">
+          <mat-icon fontIcon="search" class="material-symbols-outlined"></mat-icon>
+          <span class="fs-16 fw-400">Calorie Lookup</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon fontIcon="logout" class="color-white material-symbols-outlined"></mat-icon>
+          <span class="fs-16 fw-400">Logout</span>
+        </button>
+      </mat-menu>
+</mat-toolbar>
+<div>
+  <div *ngIf="session; else auth">
+    <router-outlet></router-outlet>
+  </div>
+  <ng-template #auth>
+    <app-auth></app-auth>
+  </ng-template>  
+</div>

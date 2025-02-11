@@ -1,0 +1,102 @@
+@use '@angular/material' as mat;
+@use '_theme-colors.scss' as my-theme;
+@use 'partials';
+
+html {
+  color-scheme: light dark;
+  @include mat.theme(
+    (
+      color: (
+        primary: my-theme.$primary-palette,
+        tertiary: my-theme.$tertiary-palette,
+      ),
+      typography: Arimo,
+    )
+  );
+}
+
+.accent {
+  @include mat.theme(
+    (
+      color: my-theme.$secondary-palette,
+    )
+  );
+}
+
+.warn {
+  @include mat.theme(
+    (
+      color: my-theme.$error-palette,
+    )
+  );
+}
+
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+  margin: 0;
+  font-family: Arimo, sans-serif;
+}
+
+h2 {
+  padding: 16px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.primary-button {
+  @include mat.button-overrides(
+    (
+      filled-label-text-color: var(--mat-sys-on-primary),
+      filled-container-shape: 6px,
+      filled-container-height: 29px,
+      filled-horizontal-padding: 14px,
+      filled-label-text-weight: 300,
+      filled-label-text-size: 1rem,
+    )
+  );
+}
+
+.warn-button {
+  @include mat.button-overrides(
+    (
+      outlined-outline-color: var(--mat-sys-error),
+      outlined-label-text-color: var(--mat-sys-error),
+      outlined-container-shape: 6px,
+      outlined-container-height: 29px,
+      outlined-horizontal-padding: 14px,
+      outlined-label-text-weight: 300,
+      outlined-label-text-size: 1rem,
+    )
+  );
+}
+
+.header {
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+    p {
+      margin: 0 !important;
+    }
+
+    @include mat.icon-overrides((
+      color: var(--mat-sys-on-primary)
+    ))
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
+}

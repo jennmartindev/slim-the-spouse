@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+.page-header {
+  align-items: center;
+  background-color: var(--mat-sys-background);
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  position: fixed;
+  top: 56px;
+  right: 0;
+  left: 0;
+  z-index: 999;
+
+  h3 {
+    flex: 1;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+.add-meal-form {
+  margin: 0 20px;
+  padding-top: 50px;
+}
+
+.error-btn {
+  @include mat.button-overrides(
+    (
+      outlined-outline-color: var(--mat-sys-error),
+      outlined-label-text-color: var(--mat-sys-error),
+      outlined-container-shape: 6px,
+      outlined-container-height: 34px,
+      outlined-horizontal-padding: 10px,
+    )
+  );
+}
+
+.submit-btn {
+  @include mat.button-overrides(
+    (
+      filled-ripple-color: var(--mat-sys-primary),
+      filled-container-color: var(--mat-sys-primary-container),
+      filled-container-shape: 6px,
+      filled-container-height: 34px,
+      filled-horizontal-padding: 10px,
+      filled-label-text-color: var(--mat-sys-on-primary-container),
+    )
+  );
+}

@@ -1,0 +1,93 @@
+<div class="flex flex-col gap-20 mr-20 ml-20 mt-90">
+    <div class="widget-panel">
+        <div class="flex flex-col gap-8 justify-center align-center">
+            <p>Calories</p>
+            <canvas baseChart
+            [datasets]="calorieChartDatasets"
+            [options]="doughnutChartOptions"        
+            [legend]="false"
+            [type]="'doughnut'">
+            </canvas>
+            <p>{{ calorieGoal - calorieConsumed | number: '1.0-0' }} kcal</p>
+        </div>
+
+        <div class="flex flex-col gap-8 justify-center align-center">
+            <p>Protein</p>
+            <canvas baseChart
+                [datasets]="proteinChartDatasets"
+                [options]="doughnutChartOptions"        
+                [legend]="false"
+                [type]="'doughnut'">
+            </canvas>
+            <p>{{ proteinGoal - proteinConsumed | number: '1.0-0' }} g</p>
+        </div>
+
+        <div class="flex flex-col gap-8 justify-center align-center">
+            <p>Fiber</p>
+            <canvas baseChart
+                [datasets]="fiberChartDatasets"
+                [options]="doughnutChartOptions"        
+                [legend]="false"
+                [type]="'doughnut'">
+            </canvas>
+            <p>{{ fiberGoal - fiberConsumed | number: '1.0-0' }} g</p>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="flex justify-between align-center">
+        <div>
+            <button mat-icon-button (click)="goBackDay()">
+                <mat-icon fontIcon="chevron_left" class="material-symbols-outlined"></mat-icon>
+            </button>
+        </div>
+        <div class="day-picker">
+            <mat-icon fontIcon="calendar_month" class="material-symbols-outlined fs-22"></mat-icon>
+            <p>{{ day | date: 'EEEE, MMMM, dd yyyy' }}</p>
+        </div>
+        <div>
+            <button mat-icon-button (click)="goNextDay()">
+                <mat-icon fontIcon="chevron_right" class="material-symbols-outlined"></mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="meal-list-widget">
+        @if (diaryData !== undefined && diaryData.length > 0) {
+        <mat-list role="list">
+            <div *ngFor="let diaryDataItem of diaryData">
+                <mat-list-item role="listitem" class="diary-list-container" (touchstart)="swipe($event, 'start', diaryDataItem)" (touchend)="swipe($event, 'end', diaryDataItem)">
+                    <div id="slides" class="slides flex justify-between align-center">
+                        <div class="flex gap-2">
+                            <p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 230px;">{{ diaryDataItem.meal.name }}</p>
+                            <p>(x{{ diaryDataItem.quantity }})</p>
+                        </div>
+                        <p>{{ diaryDataItem.calories | number: '1.0-0' }}</p>
+                    
+                        <div *ngIf="diaryDataItem.showBtns" class="diary-list-button-panel">
+                            <button mat-icon-button class="icon-button" (click)="onRemoveQuantity(diaryDataItem)">
+                                <mat-icon fontIcon="remove" class="material-symbols-outlined"></mat-icon>
+                            </button>
+                            <p style="width: 25px; text-align: center;">{{ diaryDataItem.quantity === undefined ? 0 : diaryDataItem.quantity }}</p>                       
+                            <button mat-icon-button class="icon-button" (click)="onAddQuantity(diaryDataItem)">
+                                <mat-icon fontIcon="add" class="material-symbols-outlined"></mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </div>
+        </mat-list>
+    } @else {
+        <div class="flex align-center justify-center w-100p">
+            <p class="fw-300 m-0">No activity for this day</p>
+        </div>
+    }
+    </div>
+</div>
+
+<div class="right-corner-container">  
+    <button class="fab-button" mat-fab (click)="add()">
+        <mat-icon fontIcon="add" class="material-symbols-outlined"></mat-icon>
+    </button>
+</div>

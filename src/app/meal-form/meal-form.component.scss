@@ -1,0 +1,118 @@
+@use '@angular/material' as mat;
+
+.page-header {
+  align-items: center;
+  background-color: var(--mat-sys-background);
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  position: fixed;
+  top: 56px;
+  right: 0;
+  left: 0;
+  z-index: 999;
+
+  h3 {
+    flex: 1;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+.meal-list-form {
+  margin-top: 95px;
+}
+
+mat-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+
+  mat-list-item {
+    border-bottom: 1px solid #d9d9d9;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include mat.list-overrides(
+      (
+        list-item-one-line-container-height: 60px,
+      )
+    );
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 26px;
+      letter-spacing: 1.46px;
+      margin: 0;
+    }
+  }
+}
+
+.icon-button {
+  @include mat.icon-button-overrides(
+    (
+      state-layer-size: 30px,
+    )
+  );
+}
+
+.summary-widget {
+  background-color: var(--mat-sys-surface-bright);;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 0 10px;
+
+  p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 1.46px;
+    margin: 0;
+    padding: 0 2px;
+  }
+
+  .p-label {
+    font-weight: 300 !important;
+    font-size: 14px !important;
+  }
+}
+
+h4 {
+  letter-spacing: 1.26px;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.error-btn {
+  @include mat.button-overrides(
+    (
+      outlined-outline-color: var(--mat-sys-error),
+      outlined-label-text-color: var(--mat-sys-error),
+      outlined-container-shape: 6px,
+      outlined-container-height: 34px,
+      outlined-horizontal-padding: 10px,
+    )
+  );
+}
+
+.submit-btn {
+  @include mat.button-overrides(
+    (
+      filled-ripple-color: var(--mat-sys-primary),
+      filled-container-color: var(--mat-sys-primary-container),
+      filled-container-shape: 6px,
+      filled-container-height: 34px,
+      filled-horizontal-padding: 10px,
+      filled-label-text-color: var(--mat-sys-on-primary-container),
+    )
+  );
+}

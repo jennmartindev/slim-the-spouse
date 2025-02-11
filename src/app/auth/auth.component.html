@@ -1,0 +1,15 @@
+<div style="margin: 75px 20px;">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form-widget">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <mat-form-field id="email" appearance="outline" subscriptSizing="dynamic" floatLabel="always">
+      <mat-label>Email</mat-label>
+      <input matInput currencyMask formControlName="email" type="email">
+    </mat-form-field>  
+    <mat-form-field id="password" appearance="outline" subscriptSizing="dynamic" floatLabel="always">
+      <mat-label>Password</mat-label>
+      <input matInput currencyMask formControlName="password" type="password">
+    </mat-form-field>  
+    <button mat-flat-button class="primary-button" type="submit">Login</button>
+  </div>
+</form>
+</div>

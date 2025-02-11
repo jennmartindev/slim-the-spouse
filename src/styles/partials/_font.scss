@@ -1,0 +1,169 @@
+@use 'variables' as v;
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px !important;
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
+
+.fs-22 {
+  font-size: 22px !important;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-34 {
+  font-size: 34px;
+}
+
+.fs-38 {
+  font-size: 38px;
+}
+
+.fs-42 {
+  font-size: 42px;
+}
+
+.fs-48 {
+  font-size: 48px;
+}
+
+.fs-52 {
+  font-size: 52px;
+}
+
+.fs-62 {
+  font-size: 62px;
+}
+
+.ls-10p-em {
+  letter-spacing: 0.1em;
+}
+
+.arimo {
+  font-family: 'Roboto Condensed';
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lh-50 {
+  line-height: 50px;
+}
+
+.lh-1p6 {
+  line-height: 1.6;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.color-secondary {
+  color: v.$secondary !important;
+}
+
+.color-primary {
+  color: v.$primary !important;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-warn {
+  color: v.$warn !important;
+}
+
+.color-neutral {
+  color: v.$light-text !important;
+}
+
+.color-success {
+  color: v.$success !important;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+}
+
+.overflow-anywhere {
+  overflow-wrap: anywhere;
+}
+
+.info-500 {
+  color: #2b78f0;
+}
