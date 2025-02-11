@@ -29,6 +29,8 @@ export class ManageMealsComponent {
     this.supabaseService.deleteMeal(id).then(() => this.getData());
   };
 
+  onBack = () => this.router.navigate(['']);
+
   private getData() {
     this.supabaseService.getMealList().then(ml => (this.mealList = ml));
   }
