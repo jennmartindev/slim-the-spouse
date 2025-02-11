@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+
+.submit-btn {
+    @include mat.button-overrides(
+      (
+        filled-ripple-color: var(--mat-sys-primary),
+        filled-container-color: var(--mat-sys-primary-container),
+        filled-container-shape: 6px,
+        filled-container-height: 34px,
+        filled-horizontal-padding: 10px,
+        filled-label-text-color: var(--mat-sys-on-primary-container),
+      )
+    );
+  }
+  
